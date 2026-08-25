@@ -326,16 +326,16 @@ export default function ClimateMap() {
             {REGIONS.features.map((f) => {
               const p = f.properties;
               const val = p.proj[scenario][period];
-              const fillColor = colorForAnomaly(val);
+              const isSel = selected === p.acronym;
+              const isHov = hovered === p.acronym;
               return (
                 <path
                   key={p.acronym}
                   d={path(f)}
-                  fill={fillColor}
-                  stroke={fillColor}
-                  strokeWidth={1}
-                  shapeRendering="geometricPrecision"
-                  style={{ cursor: "pointer" }}
+                  fill={colorForAnomaly(val)}
+                  stroke={isSel ? "#e7ebf3" : isHov ? "#c7cddb" : "#0a0f1c"}
+                  strokeWidth={isSel ? 1.6 : isHov ? 1.2 : 0.6}
+                  style={{ cursor: "pointer", transition: "stroke 0.1s" }}
                   onClick={() =>
                     setSelected(p.acronym === selected ? null : p.acronym)
                   }
@@ -345,23 +345,6 @@ export default function ClimateMap() {
               );
             })}
 
-            {REGIONS.features.map((f) => {
-              const p = f.properties;
-              const isSel = selected === p.acronym;
-              const isHov = hovered === p.acronym;
-              if (!isSel && !isHov) return null;
-              return (
-                <path 
-                  key={`outline-${p.acronym}`}
-                  d={path(f)}
-                  fill="none"
-                  stroke={isSel ? "#e7ebf3" : "#c7cddb"}
-                  strokeWidth={isSel ? 1.6 : 1.2}
-                  pointerEvents="none"
-                />
-              );
-            })}
-  
             {/* Country borders redrawn on top so they read through the data fill */}
             {WORLD_COUNTRIES.features.map((f, i) => (
               <path
