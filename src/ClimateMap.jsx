@@ -348,11 +348,11 @@ export default function ClimateMap() {
             {REGIONS.features.map((f) => {
               const p = f.properties;
               const isSel = selected === p.acronym;
-              const isHov = hove === p.acronym;
+              const isHov = hovered === p.acronym;
               if (!isSel && !isHov) return null;
               return (
                 <path 
-                  key={'outline-${p.acronym}'}
+                  key={`outline-${p.acronym}`}
                   d={path(f)}
                   fill="none"
                   stroke={isSel ? "#e7ebf3" : "#c7cddb"}
