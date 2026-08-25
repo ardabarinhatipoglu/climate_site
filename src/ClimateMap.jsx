@@ -333,8 +333,8 @@ export default function ClimateMap() {
                   key={p.acronym}
                   d={path(f)}
                   fill={colorForAnomaly(val)}
-                  stroke={isSel ? "#e7ebf3" : isHov ? "#c7cddb" : "#0a0f1c"}
-                  strokeWidth={isSel ? 1.6 : isHov ? 1.2 : 0.6}
+                  stroke={isSel ? "#e7ebf3" : isHov ? "#c7cddb" : "none"}
+                  strokeWidth={isSel ? 1.6 : isHov ? 1.2 : 0}
                   style={{ cursor: "pointer", transition: "stroke 0.1s" }}
                   onClick={() =>
                     setSelected(p.acronym === selected ? null : p.acronym)
