@@ -421,7 +421,7 @@ export default function ClimateMap() {
             }}
           >
             Click a region for details. Global-mean trajectory per IPCC AR6
-            Table SPM.1; regional pattern estimated via GSAT scaling.
+            Table SPM.1, regional pattern estimated via GSAT scaling.
           </div>
         </div>
 
@@ -464,8 +464,8 @@ export default function ClimateMap() {
         taken directly from IPCC AR6 WG1 Summary for Policymakers, Table
         SPM.1. Per-region values apply an illustrative amplification factor to
         that global trajectory, following the regional pattern-scaling
-        approach used in the AR6 Atlas (Ch. 12 / Iturbide et al. 2020) —
-        they are informed approximations of known regional warming patterns
+        approach used in the AR6 Atlas. (Ch. 12 / Iturbide et al. 2020)
+        These are informed approximations of known regional warming patterns
         (polar amplification, land–ocean contrast, Mediterranean/continental
         hotspots), not values pulled directly from the CMIP6 model archive.
         For authoritative per-region model output, see the{" "}
@@ -668,8 +668,8 @@ function DetailPanel({ feature, scenario, period, onClose }) {
       >
         Regional amplification factor used: <strong>{p.amp}×</strong> global
         mean. Regions this far above the global-mean trajectory typically see
-        more/longer heatwave days, higher peak temperatures, and — where
-        already dry — intensifying drought conditions, consistent with AR6's
+        more numerous heatwave days that are also longer, higher peak 
+        temperatures, and intensifying drought conditions, consistent with AR6's
         assessment of hot extremes over land.
       </div>
     </div>
@@ -755,7 +755,7 @@ function SourcesPanel({ onClose }) {
           Global-mean warming trajectories (refs 1–3) are taken directly from
           published IPCC figures. Regional amplification factors apply the
           pattern-scaling approach IPCC AR6 itself uses (ref 3), grounded in
-          the specific regional-warming studies below (refs 4–6) — but the
+          the specific regional-warming studies below. (refs 4–6) However, the
           exact per-region multiplier is an informed estimate, not a value
           pulled from the CMIP6 model archive. Hazard entries per region
           (refs 7–14) summarize each region's representative key risks as
